@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: vproapp
+        app: vproapp  # Ensure consistency with metadata.labels.app
     spec:
       containers:
         - name: app
@@ -26,6 +26,4 @@ spec:
           command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for db-server; sleep 2; done;']
         - name: init-mq
           image: busybox
-          command: [ 'sh', '-c', 'until nslookup vpromq01; do echo waiting for mq-server; sleep 2; done;' ]
-
-
+          command: ['sh', '-c', 'until nslookup vpromq01; do echo waiting for mq-server; sleep 2; done;']
