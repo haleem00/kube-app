@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: vpromc
+spec:
+  ports:
+    - port: 11211
+      targetPort: mc-port
+      protocol: TCP
+  selector:
+    app: vpromc
+  type: ClusterIP
