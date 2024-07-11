@@ -21,9 +21,9 @@ spec:
             - name: app-port
               containerPort: 8080
       initContainers:
-        - name: init-db
-          image: busybox
-          command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for db-server; sleep 2; done;']
         - name: init-mq
           image: busybox
           command: ['sh', '-c', 'until nslookup vpromq01; do echo waiting for mq-server; sleep 2; done;']
+        - name: init-db
+          image: busybox
+          command: [ 'sh', '-c', 'until nslookup vprodb; do echo waiting for db-server; sleep 2; done;' ]
