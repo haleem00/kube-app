@@ -30,7 +30,7 @@ spec:
                   name: secret-app
                   key: db-pass
       nodeSelector:
-        zone: us-east-1a
+        topology.kubernetes.io/zone: us-east-1a  # Corrected nodeSelector format
 
       volumes:
         - name: vprodb-data
